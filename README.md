@@ -10,6 +10,19 @@
 > Enterprise-grade form security made simple. Because security starts with the form.
 
 formtress.js is an advanced, enterprise-grade, unobtrusive, security-focused, multi-layer form utility library that automatically protects your forms against common and advanced web vulnerabilities. With zero configuration required, it provides comprehensive security features while maintaining full flexibility for customization. It also includes self defense mechanisms to prevent security level degradation.
+## Table of Contents
+- [Features](#features-)
+- [Installation](#installation-)
+- [Quick Start](#quick-start-)
+- [Advanced Usage](#advanced-usage-)
+- [Security Features](#security-features-)
+- [Rate Limiting](#rate-limiting-)
+- [Input Validation](#input-validation-)
+- [Events & Hooks](#events--hooks-)
+- [Configuration](#configuration-)
+- [Browser Support](#browser-support-)
+- [Contributing](#contributing-)
+- [Security](#security-)
 
 ## Features 🚀
 
