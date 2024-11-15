@@ -4023,3 +4023,4 @@ if (document.readyState === 'loading') {
     // DOM is already ready, Formtress is initialized through the IIFE
     console.log('Formtress: Initialized through IIFE. DOM is already ready. Security is a must, all the time!');
 }
+
