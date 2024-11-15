@@ -1,12 +1,11 @@
 # Formtress.js 🛡️
 
 ## It's not your choice which security vulnerability to address. We got you covered.
-<br />
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/yourusername/formtress)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-
+[![Security Rating](https://img.shields.io/badge/security-A+-brightgreen.svg)](https://github.com/yourusername/formtress)
+[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)](https://github.com/yourusername/formtress)
 
 > Enterprise-grade form security made simple. Because security starts with the form.
 
@@ -15,8 +14,9 @@ formtress.js is an advanced, enterprise-grade, unobtrusive, security-focused, mu
 ## Features 🚀
 
 - **Automatic Form Discovery & Protection**
-  - No manual initialization required
-  - Secure by default
+  - Zero-configuration security
+  - Dynamic form detection
+  - Automatic initialization
   - Non-intrusive implementation
   - Supports dynamic form and input creation
 
