@@ -2,8 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Define the global configuration object early in the application's lifecycle to prevent race conditions with hackers
+        window.FormtressConfig = Object.freeze({
+            security: {
+                patterns: {
+                    xss: {
+                        enabled: true,
+                        patterns: [
+                            /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi.source,
+                            /javascript:/gi.source,
+                            /data:/gi.source,
+                            /vbscript:/gi.source,
+                            /on\w+\s*=/gi.source,
+                            /<\s*iframe/gi.source,
+                            /<\s*object/gi.source,
+                            /<\s*embed/gi.source,
+                            /expression\s*\(/gi.source,
+                            /url\s*\(/gi.source,
+                            /eval\s*\(/gi.source
+                        ],
+                        description: 'XSS attempt detected'
+                    },
+                },
+                validation: {
+                    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.source,
+                    phone: /^\+?[\d\s-]{10,}$/.source,
+                    url: /^https?:\/\/[\w\-.]+(:\d+)?([\/\w\-._~:/?#[\]@!$&'()*+,;=]*)?$/.source,
+                    alphanumeric: /^[a-zA-Z0-9]*$/.source,
+                    numbers: /^[0-9]*$/.source,
+                    date: /^\d{4}-\d{2}-\d{2}$/.source
+                },
+                rateLimit: {
+                    enabled: true,
+                    window: 1000,
+                    max: 30,
+                    windowMs: 60000
+                },
+                feedback: {
+                    showSuccess: true,
+                    showError: true,
+                    successSymbol: '✓',
+                    errorSymbol: '✗',
+                    successColor: '#4CAF50',
+                    errorColor: '#ff4444',
+                    customStyles: null
+                },
+                accessibility: {
+                    ariaLive: 'polite',
+                    useAriaInvalid: true,
+                    useAriaDescribedBy: true
+                },
+                csrf: {
+                    enabled: false,
+                    fieldName: '_csrf',
+                    validateOnSubmit: true
+                },
+                hooks: {
+                    beforeValidation: null,
+                    afterValidation: null,
+                    beforeSubmit: null,
+                    afterSubmit: null,
+                    onError: null
+                }
+            }
+        });
+    </script>
+    <script src="src/js/formtress.js" defer></script>
     <title>AutoFormtress Observer Demo</title>
-    <script src="src/js/formtress.mini.js" defer></script>
     <style>
         body {
             font-family: system-ui, -apple-system, sans-serif;
